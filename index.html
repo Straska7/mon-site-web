@@ -20,50 +20,49 @@
 
 </head>
 <body>
-	<h1>Worrrrrrr</h1>
+	<h1>Expérience de conduite accompagnée</h1>
 	<div class="container">
 		<form id="experience-form">
 			<label for="date">Date : </label><input type="date" id="date" name="date" required>
 
-			<label for="distance">What did you learn today : </label><input type="number" id="distance" min="0" name="distance" required>
+			<label for="distance">Distance en kilomètres : </label><input type="number" id="distance" min="0" step="1" name="distance" required>
 
-			<label for="typeTrajet">Type of word </label>
-			<select id="typeTrajet" required>
-				<option value="urbain">Common</option>
-	      		<option value="routier">Official</option>
-	      		<option value="autoroute">Expression</option>
+			<label for="meteo">Météo : </label>
+			<select id="meteo" required>
+				<option value="pluvieux">Pluvieux</option>
+	      		<option value="nuageux">Nuageux</option>
+	      		<option value="ensoleille">Ensoleillé</option>
+                <option value="venteux">Venteux</option>
+                <option value="enneige">Enneigé</option>
+                <option value="tempete">Tempête</option>
+                <option value="sol_humide">Sol Humide</option>
 			</select>
-			
-			<label for="manoeuvres">Where did you learn it :</label><input type="text" id="manoeuvres" name="manoeuvres">
 
+			<label for="manoeuvres">Manoeuvre :</label><input type="text" id="manoeuvres" name="manoeuvres">
 
-	    	<label for="commentaires">Commentary :</label>
+	    	<label for="commentaires">Commentaire :</label>
 	    	<textarea id="commentaires"></textarea>
-	    
-	    	<button type="submit">Upload</button>
 
-
+	    	<button type="submit">Enregistrer</button>
 		</form>
 		<div>
-			<button id="export-csv">Export in CSV</button>
-			<button id="export-json">Export in JSON</button>
+			<button id="export-csv">Exporter en CSV</button>
+			<button id="export-json">Exporter en JSON</button>
 		</div>
 	</div>
 	<table id="experiences-table">
   		<thead>
     		<tr>
       		<th>Date</th>
-      		<th>What did you learn today :</th>
-      		<th>Type of word</th>
-      		<th>Where</th>
-      		<th>Commentary</th>
+      		<th>Distance en kilomètres</th>
+      		<th>Météo</th>
+      		<th>Manoeuvre</th>
+      		<th>Commentaire</th>
     		</tr>
   		</thead>
   		<tbody id="experiences-table-body"></tbody>
 	</table>
 	<canvas id="typeTrajetChart" width="400" height="400"></canvas>
-	<p id="totalDistance">Total words : 0 km</p>
-
-
+	<p id="totalDistance">Distance totale : 0 km</p>
 </body>
 </html>
