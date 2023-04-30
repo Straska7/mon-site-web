@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>I need to learn english</title>
+	<link rel="stylesheet" href="style.css">
+	<style>
+    	h1 {
+		  font-family: 'Roboto', sans-serif; /* choisir une police de caractères attrayante */
+		  font-size: 2rem; /* ajuster la taille du titre selon vos préférences */
+		  text-align: center; /* centrer le texte */
+		  margin-top: 2rem; /* ajouter un peu d'espace en haut */
+		  color: white;
+		}
+  	</style>
+	<script type="module" src="ExperienceConduite.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</head>
+<body>
+	<h1>Worrrrrrr</h1>
+	<div class="container">
+		<form id="experience-form">
+			<label for="date">Date : </label><input type="date" id="date" name="date" required>
+
+			<label for="distance">What did you learn today : </label><input type="number" id="distance" min="0" name="distance" required>
+
+			<label for="typeTrajet">Type of word </label>
+			<select id="typeTrajet" required>
+				<option value="urbain">Common</option>
+	      		<option value="routier">Official</option>
+	      		<option value="autoroute">Expression</option>
+			</select>
+			
+			<label for="manoeuvres">Where did you learn it :</label><input type="text" id="manoeuvres" name="manoeuvres">
+
+
+	    	<label for="commentaires">Commentary :</label>
+	    	<textarea id="commentaires"></textarea>
+	    
+	    	<button type="submit">Upload</button>
+
+
+		</form>
+		<div>
+			<button id="export-csv">Export in CSV</button>
+			<button id="export-json">Export in JSON</button>
+		</div>
+	</div>
+	<table id="experiences-table">
+  		<thead>
+    		<tr>
+      		<th>Date</th>
+      		<th>What did you learn today :</th>
+      		<th>Type of word</th>
+      		<th>Where</th>
+      		<th>Commentary</th>
+    		</tr>
+  		</thead>
+  		<tbody id="experiences-table-body"></tbody>
+	</table>
+	<canvas id="typeTrajetChart" width="400" height="400"></canvas>
+	<p id="totalDistance">Total words : 0 km</p>
+
+
+</body>
+</html>
